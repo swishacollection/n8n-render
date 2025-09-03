@@ -4,17 +4,36 @@ services:
     env: docker
     plan: free
     envVars:
+      # Authentication
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
         value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
         value: "yourpassword"
+
+      # Host/Port Config
       - key: N8N_HOST
-        value: "n8n-render.onrender.com" # change to your Render URL
+        value: "n8n-render.onrender.com" # replace with your actual Render URL
       - key: N8N_PORT
         value: "5678"
       - key: N8N_PROTOCOL
         value: "https"
       - key: WEBHOOK_URL
         value: "https://n8n-render.onrender.com/"
+
+      # Database (Postgres)
+      - key: DB_TYPE
+        value: "postgresdb"
+      - key: DB_POSTGRESDB_HOST
+        value: "dpg-d2s3jp95pdvs73eobvrg-a"
+      - key: DB_POSTGRESDB_PORT
+        value: "5432"
+      - key: DB_POSTGRESDB_DATABASE
+        value: "n8n_db_ymb9"
+      - key: DB_POSTGRESDB_USER
+        value: "n8n_db_ymb9_user"
+      - key: DB_POSTGRESDB_PASSWORD
+        value: "ayBRi7m5AAxLKJtH8F4x773kDCTO1LdB"
+      - key: DB_POSTGRESDB_SCHEMA
+        value: "public"
